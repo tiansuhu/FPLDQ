@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Entity", "FPLDQ.Entit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{DE5EEA33-A399-4EFC-ADBF-B2B0FB913EBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Common", "FPLDQ.Common\FPLDQ.Common.csproj", "{080F1825-33DB-4D0C-BB01-755E70F09C5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Data", "FPLDQ.Data\FPLDQ.Data.csproj", "{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{DE5EEA33-A399-4EFC-ADBF-B2B0FB913EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE5EEA33-A399-4EFC-ADBF-B2B0FB913EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE5EEA33-A399-4EFC-ADBF-B2B0FB913EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080F1825-33DB-4D0C-BB01-755E70F09C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080F1825-33DB-4D0C-BB01-755E70F09C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080F1825-33DB-4D0C-BB01-755E70F09C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080F1825-33DB-4D0C-BB01-755E70F09C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
