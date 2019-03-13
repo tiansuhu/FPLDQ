@@ -15,7 +15,7 @@ namespace FPLDQ.Entity
     //  修改者：tianxy
     //  修改说明： 用户信息
     //==============================================================
-    class UserModel
+    public class UserModel
     {
     }
 }
