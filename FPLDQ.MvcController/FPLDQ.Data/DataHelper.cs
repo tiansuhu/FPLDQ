@@ -16,7 +16,7 @@ namespace FPLDQ.Data
     //  时间：2019/3/13 11:00:34
     //  文件名：DataHelper
     //  版本：V1.0.1  
-    //  说明： 
+    //  说明： 提供者模式
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
@@ -74,7 +74,7 @@ namespace FPLDQ.Data
             searchString = searchString.Replace("*", "%");
 
             // Strip any markup characters
-            searchString = Globals.StripHtmlXmlTags(searchString);
+            //searchString = Globals.StripHtmlXmlTags(searchString);
 
             // Remove known bad SQL characters
             searchString = Regex.Replace(searchString, "--|;|'|\"", " ", RegexOptions.Compiled | RegexOptions.Multiline);

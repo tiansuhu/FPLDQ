@@ -15,6 +15,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.DataController", "FPLDQ.DataController\FPLDQ.DataController.csproj", "{E7181F41-93E0-4203-A4D6-11214A11F6D3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{F9AE9D3D-D29A-47A2-A791-4F8D72F4E26E}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Aspose.Cells.dll = lib\Aspose.Cells.dll
+		lib\Aspose.Pdf.dll = lib\Aspose.Pdf.dll
+		lib\Aspose.Slides.dll = lib\Aspose.Slides.dll
+		lib\Aspose.Words.dll = lib\Aspose.Words.dll
+		lib\EntityFramework.dll = lib\EntityFramework.dll
+		lib\EntityFramework.SqlServer.dll = lib\EntityFramework.SqlServer.dll
+		lib\EntityFramework.SqlServer.xml = lib\EntityFramework.SqlServer.xml
+		lib\EntityFramework.xml = lib\EntityFramework.xml
+		lib\Microsoft.AspNet.Identity.Core.dll = lib\Microsoft.AspNet.Identity.Core.dll
+		lib\Microsoft.AspNet.Identity.Core.xml = lib\Microsoft.AspNet.Identity.Core.xml
+		lib\Microsoft.AspNet.Identity.EntityFramework.dll = lib\Microsoft.AspNet.Identity.EntityFramework.dll
+		lib\Microsoft.AspNet.Identity.EntityFramework.xml = lib\Microsoft.AspNet.Identity.EntityFramework.xml
+		lib\Microsoft.Owin.resources.dll = lib\Microsoft.Owin.resources.dll
+		lib\Microsoft.Owin.Security.dll = lib\Microsoft.Owin.Security.dll
+		lib\Microsoft.Owin.Security.XML = lib\Microsoft.Owin.Security.XML
+		lib\Microsoft.Owin.xml = lib\Microsoft.Owin.xml
+		lib\Microsoft.Practices.EnterpriseLibrary.Data.dll = lib\Microsoft.Practices.EnterpriseLibrary.Data.dll
+		lib\System.Web.Mvc.dll = lib\System.Web.Mvc.dll
+		lib\System.Web.Mvc.xml = lib\System.Web.Mvc.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

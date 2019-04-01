@@ -29,9 +29,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\lib\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>..\lib\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Slides">
+      <HintPath>..\lib\Aspose.Slides.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\lib\Aspose.Words.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileHelper.cs" />
-    <Compile Include="LogHelper.cs" />
+    <Compile Include="File\Aspose\AsposeHelper.cs" />
+    <Compile Include="File\FileHelper.cs" />
+    <Compile Include="Log\LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

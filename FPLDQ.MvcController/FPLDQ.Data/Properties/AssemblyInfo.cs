@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("FPLDQ.Data")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("提供者模式")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FPLDQ.Data")]
