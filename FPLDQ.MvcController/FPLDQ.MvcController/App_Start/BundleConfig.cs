@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Web
+namespace FPLDQ.MvcController
 {
     public class BundleConfig
     {

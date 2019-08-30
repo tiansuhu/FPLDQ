@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Common", "FPLDQ.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Data", "FPLDQ.Data\FPLDQ.Data.csproj", "{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{79175F9F-2B0E-4B57-BA75-5AA59D14A0A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.Web", "Web\FPLDQ.Web.csproj", "{79175F9F-2B0E-4B57-BA75-5AA59D14A0A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPLDQ.DataController", "FPLDQ.DataController\FPLDQ.DataController.csproj", "{E7181F41-93E0-4203-A4D6-11214A11F6D3}"
 EndProject
@@ -26,6 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{F9AE9D3D-D29
 		lib\EntityFramework.SqlServer.xml = lib\EntityFramework.SqlServer.xml
 		lib\EntityFramework.xml = lib\EntityFramework.xml
 		F:\柳钢\2019\liugang\packages\Gma.QrCodeNet.Encoding.dll = F:\柳钢\2019\liugang\packages\Gma.QrCodeNet.Encoding.dll
+		F:\柳钢\2019\liugang\OThinker.H3.Controller\bin\ICSharpCode.SharpZipLib.dll = F:\柳钢\2019\liugang\OThinker.H3.Controller\bin\ICSharpCode.SharpZipLib.dll
 		lib\Microsoft.AspNet.Identity.Core.dll = lib\Microsoft.AspNet.Identity.Core.dll
 		lib\Microsoft.AspNet.Identity.Core.xml = lib\Microsoft.AspNet.Identity.Core.xml
 		lib\Microsoft.AspNet.Identity.EntityFramework.dll = lib\Microsoft.AspNet.Identity.EntityFramework.dll
