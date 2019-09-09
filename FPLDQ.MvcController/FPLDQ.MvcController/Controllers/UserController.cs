@@ -18,8 +18,16 @@ namespace FPLDQ.MvcController.Controllers
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-   public class UserController: Controller
+   public class UserController: ControllerBase
     {
+        public override string FunctionCode
+        {
+            get
+            {
+                return "";
+            }
+        }
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {

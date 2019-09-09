@@ -6,8 +6,15 @@ using System.Web.Mvc;
 
 namespace FPLDQ.MvcController
 {
-    public class HomeController : Controller
+    public class HomeController : ControllerBase
     {
+        public override string FunctionCode
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
         public ActionResult Index()
         {
             return View();

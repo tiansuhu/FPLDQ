@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPLDQ.Entity
+namespace FPLDQ.MvcController
 {
     //==============================================================
     //  作者：tianxy
-    //  时间：2019/2/12 16:58:23
-    //  文件名：UserModel
+    //  时间：2019-8-30 14:52:45
+    //  文件名：UserValidator
     //  版本：V1.0.1  
-    //  说明： 
+    //  说明： 用户验证
     //  修改者：tianxy
-    //  修改说明： 用户信息
+    //  修改说明： 
     //==============================================================
-    public class UserModel
+    [System.Serializable]
+    public class UserValidator
     {
         /// <summary>
         /// 用户Code
@@ -41,5 +42,6 @@ namespace FPLDQ.Entity
         /// 该用户是否是管理员
         /// </summary>
         public bool IsAdmin { get; set; }
+        
     }
 }

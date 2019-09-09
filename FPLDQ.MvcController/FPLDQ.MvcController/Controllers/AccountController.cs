@@ -11,9 +11,18 @@ namespace FPLDQ.MvcController
 {
     
    
-    public class AccountController : Controller
+    public class AccountController : ControllerBase
     {
-       
+
+        public override string FunctionCode
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

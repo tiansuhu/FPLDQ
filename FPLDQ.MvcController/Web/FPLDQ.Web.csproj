@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="js\" />
+    <Folder Include="template\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc">
@@ -52,10 +53,16 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="ControllerBase.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\Web\AppConfig.cs" />
+    <Compile Include="Controllers\Web\Sessions.cs" />
+    <Compile Include="Controllers\Web\SheetEnviroment.cs" />
+    <Compile Include="Controllers\Web\UserValidator.cs" />
+    <Compile Include="Controllers\Web\UserValidatorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +74,9 @@
       <Project>{d4b17678-e12b-42ad-8c0c-9976b06012c6}</Project>
       <Name>FPLDQ.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
