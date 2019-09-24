@@ -1,36 +1,27 @@
 ﻿<div class="container w-xxl w-auto-xs page-signup">
     <div class="signup-container">
         <div class="signup-header">
-            <img src="images/LOGO_W.png" style="width:80%;">
+            <img src="images/LOGO_W1.png" style="width:80%;">
         </div>
         <form name="form">
             <div class="signup-form">
                 <div class="" style="text-align:center">
                     <div class="signup-text">
-                        <span>枫飘落的秋</span>
+                        <span>Demo的权限管理系统</span>
                     </div>
 
                     <div class="form-code ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
                      <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i> 
-                    <input autocomplete="off"  type="text" placeholder="请输入姓名" class="ivu-input ivu-input-default ivu-input-with-prefix"> 
+                    <input ng-model="userCode"  type="text" placeholder="请输入姓名" class="ivu-input ivu-input-default ivu-input-with-prefix"> 
                     <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-contact"></i></span>
                     </div>
 
                     <div class="form-password ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
                         <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
-                        <input autocomplete="off" type="password" placeholder="请输入密码" class="ivu-input ivu-input-default ivu-input-with-prefix">
+                        <input ng-model="userPassword" type="password" placeholder="请输入密码" class="ivu-input ivu-input-default ivu-input-with-prefix">
                         <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-lock"></i></span>
                     </div>
-                    <!--<div class="form-group w-icon">
-                        <input name="txtUser" type="text" id="txtUser"
-                               autofocus class="ivu-input ivu-input-default" size="20" placeholder="{{LanJson.Code}}"
-                               ng-model="userCode" ng-keypress="($event.which===13)?loginIn():''" required>
-                    </div>-->
-                    <!--<div class="form-group w-icon">
-                        <input name="txtPassword" type="password" id="txtPassword"
-                               class="ivu-input ivu-input-default" size="20" placeholder="{{LanJson.Password}}"
-                               ng-model="userPassword" ng-keypress="($event.which===13)?loginIn():''" required>
-                    </div>-->
+                    
                     <div class="form-actions">
                         <button class="ivu-btn ivu-btn-success" style="width:100%;" ng-click="loginIn()">
                             <!--translate="LoginController.Login"-->
