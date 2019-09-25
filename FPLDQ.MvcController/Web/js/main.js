@@ -46,6 +46,7 @@ angular.module('app')
          }
      }
 
+     $scope.Title = "公司名称";
      // 设置信息本地存储
      if (angular.isDefined($localStorage.settings)) {
          $scope.app.settings = $localStorage.settings;
@@ -484,6 +485,9 @@ angular.module('app')
              }, 1000 * 2);
          }
      })
+
+
+
 
  }]);
 

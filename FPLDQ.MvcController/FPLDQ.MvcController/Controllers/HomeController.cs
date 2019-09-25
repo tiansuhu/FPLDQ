@@ -15,9 +15,9 @@ namespace FPLDQ.MvcController
                 throw new NotImplementedException();
             }
         }
-        public ActionResult Index()
+        public void Index()
         {
-            return View();
+            Response.Redirect("~/Index.html");//路由跳转到首页
         }
 
         public ActionResult About()

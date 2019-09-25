@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace FPLDQ.MvcController.Controllers
+namespace FPLDQ.MvcController
 {
     //==============================================================
     //  作者：tianxy
@@ -17,7 +17,7 @@ namespace FPLDQ.MvcController.Controllers
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-    [Authorize]
+    //[Authorize]
     public class OrganizationController : ControllerBase
     {
         public override string FunctionCode
@@ -56,5 +56,7 @@ namespace FPLDQ.MvcController.Controllers
             
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }

@@ -12,19 +12,18 @@
 
                     <div class="form-code ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
                      <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i> 
-                    <input ng-model="userCode"  type="text" placeholder="请输入姓名" class="ivu-input ivu-input-default ivu-input-with-prefix"> 
+                    <input id="txtUser" ng-model="userCode"  type="text" placeholder="请输入姓名" class="ivu-input ivu-input-default ivu-input-with-prefix"> 
                     <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-contact"></i></span>
                     </div>
 
                     <div class="form-password ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
                         <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
-                        <input ng-model="userPassword" type="password" placeholder="请输入密码" class="ivu-input ivu-input-default ivu-input-with-prefix">
+                        <input id="txtPassword" ng-model="userPassword" type="password" placeholder="请输入密码" class="ivu-input ivu-input-default ivu-input-with-prefix">
                         <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-lock"></i></span>
                     </div>
                     
                     <div class="form-actions">
                         <button class="ivu-btn ivu-btn-success" style="width:100%;" ng-click="loginIn()">
-                            <!--translate="LoginController.Login"-->
                             <span>登录</span>
                         </button>
                     </div>

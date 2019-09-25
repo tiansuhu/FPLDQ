@@ -65,6 +65,20 @@ angular.module('app')
                       ]
                   }
               })
+          .state('app.homepage', {
+              url: '/homepage',
+              controller: 'homepageController',
+              templateUrl: 'template/app/homepage.html',
+              resolve: {
+                  deps: ['$ocLazyLoad',
+                      function ($ocLazyLoad) {
+                          return $ocLazyLoad.load([
+                              'js/controllers/homepageController.js'
+                          ]);
+                      }
+                  ]
+              }
+          })
 
       }
     ]
