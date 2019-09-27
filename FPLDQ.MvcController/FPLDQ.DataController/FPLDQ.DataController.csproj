@@ -46,10 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Organization\UserMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Organization\UserData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FPLDQ.Common\FPLDQ.Common.csproj">
+      <Project>{080F1825-33DB-4D0C-BB01-755E70F09C5D}</Project>
+      <Name>FPLDQ.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FPLDQ.Data\FPLDQ.Data.csproj">
       <Project>{BE4BAA3C-8991-4CDD-8044-13FE3C420BB1}</Project>
       <Name>FPLDQ.Data</Name>

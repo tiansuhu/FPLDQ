@@ -46,7 +46,6 @@ angular.module('app')
          }
      }
 
-     $scope.Title = "公司名称";
      // 设置信息本地存储
      if (angular.isDefined($localStorage.settings)) {
          $scope.app.settings = $localStorage.settings;
@@ -63,17 +62,17 @@ angular.module('app')
      }, true);
 
      // 获取是否显示试用版标签
-     $scope.GetShowTrialTagOrNot = function () {
-         $http({
-             url: "Organization/GetShowTrialTagOrNot"
-         }).success(function (data) {
-             if (data.ShowTrialTag) {
-                 $scope.ShowTrialTag = true;
-             } else {
-                 $scope.ShowTrialTag = false;
-             }
-         })
-     }
+     //$scope.GetShowTrialTagOrNot = function () {
+     //    $http({
+     //        url: "Organization/GetShowTrialTagOrNot"
+     //    }).success(function (data) {
+     //        if (data.ShowTrialTag) {
+     //            $scope.ShowTrialTag = true;
+     //        } else {
+     //            $scope.ShowTrialTag = false;
+     //        }
+     //    })
+     //}
 
      // 设置语言
      $scope.setLang = function (langKey, $event) {
@@ -99,54 +98,8 @@ angular.module('app')
          if (r != null) return unescape(r[2]); return null;
      };
 
-     //锁定
-     $scope.doLock = function () {
-         $scope.app.locked = true;
-         $scope.LoginSuccess = true;
-         //状态记录到服务器
-         $http({
-             url: "Organization/DoLock",
-             params: {
-             }
-         })
-         .success(function (data) {
-             $scope.user.DoLock = true;
-         })
-     }
-
-     // 解锁
-     $scope.doUnlock = function () {
-         var password = $("#password").val();
-         $http({
-             url: "Organization/DoUnlock",
-             method: "post",
-             data: {
-                 password: password
-             }
-         }).success(function (data) {
-             if (data) {
-                 $("#password").val("");
-                 $scope.app.locked = false;
-                 $scope.user.DoLock = false;
-                 $scope.LoginSuccess = true;
-             } else {
-                 $scope.LoginSuccess = false;
-             }
-         }).error(function () {
-         })
-     }
-     //切换模式,设计、浏览
-     $scope.StartEdit = function () {
-         if ($stateParams.Mode == "Design") {
-             $state.go($state.$current.self.name, { OT_EditorModel: false, Mode: "" }, { reload: true });
-             return;
-         }
-         if (typeof ($scope.OT_EditorModel) == "undefined" || !$scope.OT_EditorModel) {
-             $state.go($state.$current.self.name, { OT_EditorModel: true, Mode: "Design" }, { reload: true });
-         } else {
-             $state.go($state.$current.self.name, { OT_EditorModel: false, Mode: "" }, { reload: true });
-         }
-     }
+     
+     
 
      //刷新
      $scope.refresh = function () {
@@ -154,28 +107,18 @@ angular.module('app')
          // 获取当前用户
          $http({
              url: ControllerConfig.Organization.GetCurrentUser,
+             method: "post",
              params: {
                  random: new Date().getTime(),
                  Token: Token
              }
          })
          .success(function (result, header, config, status) {
-             if (!result.Success) {
+             if (!result.Result) {
                  $state.go("platform.login");
              }
              else {
-                 $scope.user = result.User;
-                 $scope.user.ManagerName = result.ManagerName;
-                 $scope.user.OUDepartName = result.OUDepartName;
-                 $scope.user.chkEmail = result.chkEmail;
-                 $scope.user.chkMobileMessage = result.chkMobileMessage;
-                 $scope.user.chkWeChat = result.chkWeChat;
-                 $scope.user.chkApp = result.chkApp;
-                 $scope.user.chkDingTalk = result.chkDingTalk;
-                 $scope.user.FunctionViewModels = result.Functions;
-                 $scope.user.ImageUrl = $scope.user.ImageUrl + "?" + $filter("date")(new Date(), "yyyyMMddHHmmss");
-                 window.sessionStorage.setItem("scopeUser", JSON.stringify($scope.user));
-                 window.localStorage.setItem("H3.PortalRoot", result.PortalRoot);
+                 $scope.user = result.Data;
                  $scope.ShowMenu();
                  var rUrl = $scope.getUrlParam("RedirectUrl");
                  if (rUrl) {
@@ -204,38 +147,7 @@ angular.module('app')
          }
      }
 
-     //获取待办、待阅、我的流程数量
-     $scope.GetItemCount = function () {
-         var random = new Date().getTime();
-         $http({
-             cache: false,
-             url: ControllerConfig.WorkItem.GetWorkCount,
-             params: {
-                 random: random
-             }
-         })
-         .success(function (result, header, config, status) {
-             if (result.Success == false && result.ExceptionCode == 1) {
-                 //登陆超时
-                 $scope.unregisterAutoRefresh();
-                 $state.go("platform.login");
-             } else {
-                 $scope.MyCount = result.Extend;
-             }
-         })
-     }
-     //取消自动刷新
-     $scope.unregisterAutoRefresh = function () {
-         if ($scope.autoRefresh) {
-             $interval.cancel($scope.autoRefresh);
-         }
-     }
-     //注册自动刷新
-     $scope.registerAutoRefresh = function () {
-         $scope.autoRefresh = $interval(function () {
-             $scope.GetItemCount();
-         }, 60 * 1000);
-     }
+     
 
      // 退出系统
      $scope.loginOut = function () {
@@ -259,49 +171,13 @@ angular.module('app')
      // 每次进入View时触发
      $scope.$on('$viewContentLoaded', function (event) {
          $.notify.closeAll();//关闭所有弹窗
-         if ($state.current.name != "" && $state.current.name.indexOf("platform.login") == -1) {
-             $scope.GetItemCount();
-         } else {
-             $scope.unregisterAutoRefresh();
-         }
-         // 关闭表单
-         $(".app-aside-right").removeClass("show");
-
-         //锁定
-         if ($scope.user && $scope.user.DoLock) {
-             $scope.app.locked = true;
-         }
-         $scope.GetShowTrialTagOrNot();
+         
      });
 
      // 登录事件，由LoginController触发
      $scope.$on("LoginIn", function (event, args) {
          if (args.Success) {
-             $scope.Name = $translate.instant("HomePage.Workspace_MyUnfinishedWorkItem");
-             $scope.user = args.User;
-             $scope.user.ManagerName = args.ManagerName;
-             $scope.user.OUDepartName = args.OUDepartName;
-             $scope.user.chkEmail = args.chkEmail;
-             $scope.user.chkMobileMessage = args.chkMobileMessage;
-             $scope.user.chkWeChat = args.chkWeChat;
-             $scope.user.chkApp = args.chkApp;
-             $scope.user.chkDingTalk = args.chkDingTalk;
-             $scope.user.ImageUrl = $scope.user.ImageUrl + "?" + $filter("date")(new Date(), "yyyyMMddHHmmss");
-             $scope.user.FunctionViewModels = args.Functions;
-             // 记录当前PortalRoot的路径
-             window.localStorage.setItem("H3.PortalRoot", args.PortalRoot);
-             // 隐藏当前窗体
-             if (window.parent && window.parent.hideLogin) {
-                 window.parent.hideLogin();
-             }
-             if (window.top !== window) {
-                 window.top.location.href = window.top.location.href;
-                 window.top.location.href.reload();
-             }
-
-             $scope.user.Password = "";
-             //注册自动刷新
-             $scope.registerAutoRefresh();
+             
          }
 
      });
@@ -485,9 +361,6 @@ angular.module('app')
              }, 1000 * 2);
          }
      })
-
-
-
 
  }]);
 

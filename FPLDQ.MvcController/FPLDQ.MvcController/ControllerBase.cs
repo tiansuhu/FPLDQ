@@ -49,12 +49,14 @@ namespace FPLDQ.MvcController
             }
         }
 
+        
+
+
         /// <summary>
         /// 跳转到登陆页面
         /// </summary>
         public void RedirectLogin()
         {
-           // Response.Redirect("", false);
             RedirectToAction("Index", "Home", false);
         }
 

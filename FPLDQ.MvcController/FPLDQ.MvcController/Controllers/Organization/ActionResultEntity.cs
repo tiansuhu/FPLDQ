@@ -4,35 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPLDQ.Entity.Organization
+namespace FPLDQ.MvcController
 {
     //==============================================================
     //  作者：tianxy
-    //  时间：2019-9-18 14:54:00
-    //  文件名：User
+    //  时间：2019-9-26 14:16:52
+    //  文件名：ActionResultEntity
     //  版本：V1.0.1  
-    //  说明： 组织用户实体类
+    //  说明： Json返回结果的类型
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-    public class User:Unit
+    public class ActionResultEntity
     {
         /// <summary>
-        /// 用户密码
+        /// 返回结果是否正确
         /// </summary>
-        public string password { get; set; }
+        public bool Result { get; set; }
         /// <summary>
-        /// 用户QQ
+        /// 返回数据
         /// </summary>
-        public string QQ { get; set; }
+        public object Data { get; set; }
         /// <summary>
-        /// 用户Email
+        /// 返回结果消息
         /// </summary>
-        public string Email { get; set; }
-
-        /// <summary>
-        /// 移动电话
-        /// </summary>
-        public string MobilePhone { get; set; }
+        public string Message { get; set; }
     }
 }

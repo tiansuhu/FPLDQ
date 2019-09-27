@@ -1,10 +1,13 @@
-﻿using FPLDQ.Entity;
+﻿using FPLDQ.Data;
+using FPLDQ.Entity;
 using FPLDQ.Entity.Organization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace FPLDQ.Data
 {
@@ -24,7 +27,7 @@ namespace FPLDQ.Data
         static UserProvider()
         {
             _defaultInstance =
-                DataProviders.CreateInstance("FPLDQ.DataController.UserData,FPLDQ.DataController") as
+                DataProviders.CreateInstance("FPLDQ.DataController.UserData, FPLDQ.DataController") as
                 UserProvider;
         }
 
@@ -66,6 +69,13 @@ namespace FPLDQ.Data
         /// <param name="UserId"></param>
         /// <returns></returns>
         public abstract User GetUser(string UserId);
+
+        /// <summary>
+        /// 根据用户Code 获取用户信息
+        /// </summary>
+        /// <param name="UserCode"></param>
+        /// <returns></returns>
+        public abstract User GetUserbyCode(string UserCode);
         #endregion
     }
 }

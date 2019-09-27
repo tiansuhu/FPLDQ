@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FPLDQ.Data;
+using FPLDQ.Entity.Organization;
+using FPLDQ.MvcController.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,24 +41,86 @@ namespace FPLDQ.MvcController
         [AllowAnonymous]
         public JsonResult LoginIn(string userCode, string password)
         {
-            bool loginResult = false;
-            object result= new { };
+            ActionResultEntity result = new ActionResultEntity();
             try
             {
                 // 用户名和密码不为空，则使用用户名和密码登录
-               
+                if (string.IsNullOrEmpty(userCode) || string.IsNullOrEmpty(password))
+                {
+                    result.Result = false;
+                    if (string.IsNullOrEmpty(userCode))
+                        result.Message += "用户账号为空";
+
+                    if (string.IsNullOrEmpty(password))
+                        result.Message += "用户密码为空";
+
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                User loginuser=  UserHelper.GetUserbyCode(userCode);
+                if (loginuser == null)
+                {
+                    result.Result = false;
+                    result.Message = "当前用户不存在";
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                if (loginuser.password == password)//如果用户密码一致 登录成功
+                {
+                    UserValidator uservalidator = UserValidatorFactory.GetUserValidatorByUser(loginuser);
+                    this.Session[Sessions.GetUserValidator()] = uservalidator;
+
+                    result.Result = true;
+                    result.Message = "验证成功";
+                }
+                else
+                {
+                    result.Result = false;
+                    result.Message = "用户密码不正确";
+                }
+                return Json(result, JsonRequestBehavior.AllowGet);
+
             }
             catch (Exception ex)
             {
-               
+                result.Result = false;
+                result.Message = ex.ToString();
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        /// <summary>
+        /// 获取当前用户
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult GetCurrentUser()
+        {
+            ActionResultEntity result = new ActionResultEntity();
+            try
+            {
+                UserValidator currentuser = this.UserValidator ;
+                if (currentuser != null)
+                {
+                    result.Result = true;
+                    result.Message = "";
+                    result.Data = currentuser;
+                }
+                else
+                {
+                    result.Result = false;
+                }
+                    
+            }
+            catch
+            {
+                result.Result = false;
             }
 
-            // 验证单点登录
-            if (this.UserValidator != null) loginResult = true;
-
-            
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
 
 
     }

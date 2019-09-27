@@ -898,6 +898,7 @@
     <Content Include="iview\src\styles\mixins\size.less" />
     <Content Include="iview\src\styles\mixins\tooltip.less" />
     <Content Include="iview\src\styles\README.md" />
+    <Content Include="Configs\log4net.config" />
     <None Include="Project_Readme.html" />
     <Content Include="vendor\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Include="vendor\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -918,6 +919,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FPLDQ.DataController\FPLDQ.DataController.csproj">
+      <Project>{e7181f41-93e0-4203-a4d6-11214a11f6d3}</Project>
+      <Name>FPLDQ.DataController</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FPLDQ.MvcController\FPLDQ.MvcController.csproj">
       <Project>{3a90c57a-a5f6-4c8c-a080-1f37995cda49}</Project>
       <Name>FPLDQ.MvcController</Name>

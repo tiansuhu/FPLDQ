@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{F9AE9D3D-D29
 		lib\EntityFramework.xml = lib\EntityFramework.xml
 		F:\柳钢\2019\liugang\packages\Gma.QrCodeNet.Encoding.dll = F:\柳钢\2019\liugang\packages\Gma.QrCodeNet.Encoding.dll
 		F:\柳钢\2019\liugang\OThinker.H3.Controller\bin\ICSharpCode.SharpZipLib.dll = F:\柳钢\2019\liugang\OThinker.H3.Controller\bin\ICSharpCode.SharpZipLib.dll
+		F:\工作资料\碧桂园\桌面\待上线\log4net\Portal\Bin\log4net.dll = F:\工作资料\碧桂园\桌面\待上线\log4net\Portal\Bin\log4net.dll
 		lib\Microsoft.AspNet.Identity.Core.dll = lib\Microsoft.AspNet.Identity.Core.dll
 		lib\Microsoft.AspNet.Identity.Core.xml = lib\Microsoft.AspNet.Identity.Core.xml
 		lib\Microsoft.AspNet.Identity.EntityFramework.dll = lib\Microsoft.AspNet.Identity.EntityFramework.dll

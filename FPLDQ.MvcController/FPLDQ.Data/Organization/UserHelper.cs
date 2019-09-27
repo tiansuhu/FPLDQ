@@ -57,6 +57,16 @@ namespace FPLDQ.Data
             return UserProvider.Instance().GetUser(UserId);
         }
 
+        /// <summary>
+        /// 根据用户Code获取用户信息
+        /// </summary>
+        /// <param name="userCode">用户Code</param>
+        /// <returns></returns>
+        public static User GetUserbyCode(string userCode)
+        {
+            return UserProvider.Instance().GetUserbyCode(userCode);
+        }
+
 
     }
 }

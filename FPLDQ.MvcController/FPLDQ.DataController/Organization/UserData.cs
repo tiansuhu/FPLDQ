@@ -1,12 +1,10 @@
-﻿using FPLDQ.Data;
-using FPLDQ.Entity;
+﻿using FPLDQ.Common;
+using FPLDQ.Data;
 using FPLDQ.Entity.Organization;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
 
 namespace FPLDQ.DataController
 {
@@ -27,7 +25,14 @@ namespace FPLDQ.DataController
         /// </summary>
         public UserData()
         {
-            database = DatabaseFactory.CreateDatabase();
+            try
+            {
+                database = DatabaseFactory.CreateDatabase();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         
@@ -53,6 +58,24 @@ namespace FPLDQ.DataController
         {
             //TODO:实现获取用户信息
             throw new NotImplementedException();
+        }
+
+        public override User GetUserbyCode(string UserCode)
+        {
+            //TODO:实现通过用户Code获取用户信息
+            string sql = "SELECT Objectid,Code,Name,QQ,Email,Password FROM SYS_User  WHERE Code = @userCode";
+            System.Data.Common.DbCommand dbCommand = database.GetSqlStringCommand(sql);
+            database.AddInParameter(dbCommand, "@userCode", DbType.String, UserCode);
+            DataSet dts =  database.ExecuteDataSet(dbCommand);
+            User currentuser = null;
+            if (dts.Tables.Count > 0)
+            {
+                DataTable dt = dts.Tables[0];
+                if (dt.Rows.Count > 0)
+                    currentuser = UserMapping.CreateUserMapping().drMappUser(dt.Rows[0]);
+            }
+            return currentuser;
+
         }
     }
 }

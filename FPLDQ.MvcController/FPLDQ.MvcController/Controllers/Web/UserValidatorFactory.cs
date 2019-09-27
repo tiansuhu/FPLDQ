@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FPLDQ.Entity.Organization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,13 @@ namespace FPLDQ.MvcController.Controllers
     //==============================================================
     public class UserValidatorFactory
     {
+        /// <summary>
+        /// 获取验证用户
+        /// </summary>
+        /// <param name="Controller"></param>
+        /// <param name="PortalRoot"></param>
+        /// <param name="Message"></param>
+        /// <returns></returns>
         public static UserValidator GetUserValidator(System.Web.Mvc.Controller Controller, string PortalRoot, out string Message)
         {
 
@@ -41,6 +49,22 @@ namespace FPLDQ.MvcController.Controllers
                 }
             }
             return userInSession;
+        }
+
+
+        /// <summary>
+        /// 通过user 获取user用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static UserValidator GetUserValidatorByUser(User user)
+        {
+            UserValidator uservalidator = new UserValidator();
+            uservalidator.UserCode = user.Code;
+            uservalidator.UserName = user.Name;
+
+
+            return uservalidator;
         }
     }
 }

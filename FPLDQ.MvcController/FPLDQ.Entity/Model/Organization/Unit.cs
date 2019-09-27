@@ -8,31 +8,28 @@ namespace FPLDQ.Entity.Organization
 {
     //==============================================================
     //  作者：tianxy
-    //  时间：2019-9-18 14:54:00
-    //  文件名：User
+    //  时间：2019-9-26 14:48:30
+    //  文件名：Unit
     //  版本：V1.0.1  
-    //  说明： 组织用户实体类
+    //  说明： 组织单位
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-    public class User:Unit
+    public  class Unit
     {
         /// <summary>
-        /// 用户密码
+        /// Code
         /// </summary>
-        public string password { get; set; }
+        public string Code { get; set; }
         /// <summary>
-        /// 用户QQ
+        /// 名称
         /// </summary>
-        public string QQ { get; set; }
+        public string Name { get; set; }
         /// <summary>
-        /// 用户Email
+        /// 唯一ID
         /// </summary>
-        public string Email { get; set; }
+        public string ObjectId { get; set; }
 
-        /// <summary>
-        /// 移动电话
-        /// </summary>
-        public string MobilePhone { get; set; }
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,11 +63,32 @@ namespace FPLDQ.Data
             {
                 return Activator.CreateInstance(Type.GetType(typeStr));
             }
-            catch
+            catch(Exception ex)
             {
                 return null;
             }
         }
 
+
+
+        public static object CreateInstance(string dllname,string classname)
+        {
+            if (string.IsNullOrEmpty(classname)||string.IsNullOrEmpty(dllname))
+                return null;
+
+            Assembly tempAssembly;
+            Type typeofControl = null;
+            string str = System.AppDomain.CurrentDomain.BaseDirectory;//this.GetType().Assembly.Location;
+            tempAssembly = Assembly.LoadFrom(str +"\\bin\\"+ dllname);
+            typeofControl = tempAssembly.GetType(classname);
+            try
+            {
+                return Activator.CreateInstance(typeofControl);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
