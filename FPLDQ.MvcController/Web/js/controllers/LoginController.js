@@ -8,11 +8,25 @@ function ($rootScope, $scope, $translate, $http, $location, $state, $stateParams
         $scope.userCode = $("#txtUser").val();
         $scope.userPassword = $("#txtPassword").val();
         if ($scope.userCode == "" || $scope.userCode == undefined) {
-           
+            var defaults = {
+                message: '用户代码不能为空',
+                status: 'warning',
+                timeout: 3000,
+                group: null,
+                pos: 'top-center'}
+
+            $.notify(defaults);
             return;
         }
         if ($scope.userPassword == "" || $scope.userPassword == undefined) {
-             
+            var defaults = {
+                message: '密码不能为空',
+                status: 'warning',
+                timeout: 3000,
+                group: null,
+                pos: 'top-center'
+            }
+            $.notify(defaults);
             return;
         }
         $http({
@@ -28,14 +42,30 @@ function ($rootScope, $scope, $translate, $http, $location, $state, $stateParams
            // $scope.$emit("LoginIn", result);//调用main.js 中的LoginIn事件
             // 设置主界面
             if (result.Result) {
+                console.log(result);
                 $state.go("app.homepage", { TopAppCode: "home" });
             }
             else {
-                alert(result.Message);
+                var defaults = {
+                    message: result.Message,
+                    status: 'error',
+                    timeout: 3000,
+                    group: null,
+                    pos: 'top-center'
+                }
+                $.notify(defaults);
             }
         })
         .error(function (data, header, config, status) {
+            var defaults = {
+                message: '异常错误',
+                status: 'error',
+                timeout: 3000,
+                group: null,
+                pos: 'top-center'
+            }
 
+            $.notify(defaults);
         });
     }
 }]);

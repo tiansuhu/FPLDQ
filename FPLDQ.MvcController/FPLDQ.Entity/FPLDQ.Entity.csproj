@@ -63,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Menu\Menu.cs" />
+    <Compile Include="Model\Menu\MenuType.cs" />
     <Compile Include="Model\Organization\Unit.cs" />
     <Compile Include="Model\Organization\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

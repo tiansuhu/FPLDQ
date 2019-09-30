@@ -43,6 +43,7 @@ angular.module('app')
                       deps: ['$ocLazyLoad',
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
+                                'css/appExtend.css',
                                 'js/controllers/LoginController.js',
                                 'js/directives/app-directive.js?v=201802231',
                             ]);
@@ -58,7 +59,7 @@ angular.module('app')
                       deps: ['$ocLazyLoad',
                           function ($ocLazyLoad) {
                               return $ocLazyLoad.load([
-                                  'js/directives/app-directive.js?v=201802231',
+                                  'js/directives/app-directive.js?v=20190928',
                                   'vendor/jquery/datatables/jquery.dataTables.min.js',
                               ]);
                           }

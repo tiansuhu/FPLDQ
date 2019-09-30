@@ -182,6 +182,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\favicon.ico" />
+    <Content Include="Admin\index.html" />
+    <Content Include="css\appExtend.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\index.css" />
@@ -649,6 +652,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\css\" />
+    <Folder Include="Admin\fonts\" />
+    <Folder Include="Admin\img\" />
+    <Folder Include="Admin\js\" />
     <Folder Include="js\factory\" />
     <Folder Include="js\services\" />
   </ItemGroup>
