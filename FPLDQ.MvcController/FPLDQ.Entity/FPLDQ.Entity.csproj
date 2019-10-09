@@ -63,8 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\Menu\FunctionAcl.cs" />
+    <Compile Include="Model\Menu\FunctionNode.cs" />
     <Compile Include="Model\Menu\Menu.cs" />
-    <Compile Include="Model\Menu\MenuType.cs" />
+    <Compile Include="Model\Organization\OrganizationUnit.cs" />
     <Compile Include="Model\Organization\Unit.cs" />
     <Compile Include="Model\Organization\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

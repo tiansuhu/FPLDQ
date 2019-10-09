@@ -4,7 +4,7 @@ using FPLDQ.Entity.Organization;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
 using System.Data;
-
+using System.Collections.Generic;
 
 namespace FPLDQ.DataController
 {
@@ -35,16 +35,35 @@ namespace FPLDQ.DataController
             }
         }
 
-        
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public override bool AddUser(User user)
         {
             //TODO：实现添加用户
             return true;
         }
 
+        /// <summary>
+        /// 更新用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public override bool UpdateUser(User user)
         {
             //TODO:实现更新用户
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 批量更新用户
+        /// </summary>
+        /// <param name="userlist"></param>
+        /// <returns></returns>
+        public override bool UpdateUsers(List<User> userlist)
+        {
+            //TODO:实现批量更新用户
             throw new NotImplementedException();
         }
 

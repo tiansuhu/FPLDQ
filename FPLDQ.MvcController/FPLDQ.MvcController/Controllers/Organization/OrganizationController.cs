@@ -65,7 +65,7 @@ namespace FPLDQ.MvcController
                     return Json(result, JsonRequestBehavior.AllowGet);
                 }
 
-                if (loginuser.password == password)//如果用户密码一致 登录成功
+                if (loginuser.Password == password)//如果用户密码一致 登录成功
                 {
                     UserValidator uservalidator = UserValidatorFactory.GetUserValidatorByUser(loginuser);
                     this.Session[Sessions.GetUserValidator()] = uservalidator;

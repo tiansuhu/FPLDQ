@@ -37,6 +37,13 @@ namespace FPLDQ.Data
         {
             return UserProvider.Instance().UpdateUser(User);
         }
+
+        public static bool UpdateUsers(List<User> userlist)
+        {
+            return UserProvider.Instance().UpdateUsers(userlist);
+        }
+
+
         /// <summary>
         /// 删除用户
         /// </summary>
@@ -67,6 +74,7 @@ namespace FPLDQ.Data
             return UserProvider.Instance().GetUserbyCode(userCode);
         }
 
+        
 
     }
 }

@@ -8,23 +8,14 @@ namespace FPLDQ.Entity
 {
     //==============================================================
     //  作者：tianxy
-    //  时间：2019-9-30 9:56:03
-    //  文件名：MenuType
+    //  时间：2019-10-9 14:24:06
+    //  文件名：FunctionNode
     //  版本：V1.0.1  
-    //  说明： 
+    //  说明： 菜单类
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-    public enum MenuType
+    public class FunctionNode
     {
-        /// <summary>
-        ///连接类型
-        /// </summary>
-        Link,
-        /// <summary>
-        /// 页面类型
-        /// </summary>
-        Page
-
     }
 }

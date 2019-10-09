@@ -56,6 +56,13 @@ namespace FPLDQ.Data
         public abstract bool UpdateUser(User user);
 
         /// <summary>
+        /// 批量更新用户
+        /// </summary>
+        /// <param name="userlist"></param>
+        /// <returns></returns>
+        public abstract bool UpdateUsers(List<User> userlist);
+         
+        /// <summary>
         /// 删除用户
         /// </summary>
         /// <param name="userid"></param>

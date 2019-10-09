@@ -49,12 +49,12 @@
                 <span translate="HomePage.{{list.Code}}" translate-default="{{list.DisplayName}}">{{list.DisplayName}}</span>
             </a>
         </li>
-        <li class="dropdown pos-stc andMore" style="  position: relative !important;" ng-show="user.FunctionViewModels.length>=7">
+        <li class="dropdown pos-stc andMore" style=" position relative !important;" ng-show="user.FunctionViewModels.length>=7">
             <a class="dropdown-toggle">
                 <span>更多</span>
             </a>
             <ul class="nav navbar-nav hidden-sm" style="font-size: 13px;display: none;position: absolute;z-index: 999999; background: #1199c4; min-width: 110px;max-height:300px;overflow:auto;">
-                <li class="dropdown pos-stc" style="    float: initial;"
+                <li class="dropdown pos-stc" style=" float initial;"
                     ng-repeat="list in user.FunctionViewModels" ng-show="$index>=7"
                     ng-show="list.DockOnHomePage">
                     <a class="dropdown-toggle"

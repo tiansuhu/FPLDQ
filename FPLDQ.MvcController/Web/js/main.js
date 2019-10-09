@@ -17,8 +17,8 @@ angular.module('app')
          name: "FPLDQ",
          version: '1.0.0',
          locked: false,
-         logoSimple: "img/H1.png",
-         logoFull: "img/logo.png",
+         logoSimple: "images/img/H1.png",//配置菜单页面图片
+         logoFull: "images/img/logo.png",//配置菜单页面图片
          // 颜色定义
          color: {
              primary: '#7266ba',
@@ -60,19 +60,6 @@ angular.module('app')
          }
          $localStorage.settings = $scope.app.settings;
      }, true);
-
-     // 获取是否显示试用版标签
-     //$scope.GetShowTrialTagOrNot = function () {
-     //    $http({
-     //        url: "Organization/GetShowTrialTagOrNot"
-     //    }).success(function (data) {
-     //        if (data.ShowTrialTag) {
-     //            $scope.ShowTrialTag = true;
-     //        } else {
-     //            $scope.ShowTrialTag = false;
-     //        }
-     //    })
-     //}
 
      // 设置语言
      $scope.setLang = function (langKey, $event) {

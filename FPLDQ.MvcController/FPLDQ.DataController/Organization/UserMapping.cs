@@ -35,12 +35,12 @@ namespace FPLDQ.DataController
             User u = new User();
             try
             {
-                u.ObjectId = dr["Objectid"] + string.Empty;
+                u.ObjectID = dr["Objectid"] + string.Empty;
                 u.Code = dr["Code"] + string.Empty;
                 u.Name = dr["Name"] + string.Empty;
                 u.QQ = dr["QQ"] + string.Empty;
                 u.Email = dr["Email"] + string.Empty;
-                u.password = dr["Password"] + string.Empty;
+                u.Password = dr["Password"] + string.Empty;
 
                 return u;
             }

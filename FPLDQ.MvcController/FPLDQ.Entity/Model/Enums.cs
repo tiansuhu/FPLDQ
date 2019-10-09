@@ -4,28 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPLDQ.Entity.Organization
+namespace FPLDQ.Entity
 {
     //==============================================================
     //  作者：tianxy
-    //  时间：2019-9-26 14:48:30
-    //  文件名：Unit
+    //  时间：2019-10-9 16:54:40
+    //  文件名：Enums
     //  版本：V1.0.1  
-    //  说明： 组织基类
+    //  说明： 枚举集合
     //  修改者：tianxy
     //  修改说明： 
     //==============================================================
-    public  class Unit
+    class Enums
+    {
+    }
+    /// <summary>
+    /// 菜单类型
+    /// </summary>
+    public enum MenuType
     {
         /// <summary>
-        /// 名称
+        ///连接类型
         /// </summary>
-        public string Name { get; set; }
+        Link,
         /// <summary>
-        /// 唯一ID
+        /// 页面类型
         /// </summary>
-        public string ObjectID { get; set; }
+        Page
 
-        
     }
+
+
 }
