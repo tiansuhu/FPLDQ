@@ -44,6 +44,20 @@ namespace FPLDQ.MvcController
             ActionResultEntity result = new ActionResultEntity();
             try
             {
+                if (userCode == "testUser")
+                {
+                    //开发测试用
+                    UserValidator uservalidator =new UserValidator();
+                    uservalidator.IsAdmin = true;
+                    uservalidator.UserCode = "testUser";
+                    uservalidator.UserName = "测试用户";
+                    this.Session[Sessions.GetUserValidator()] = uservalidator;
+
+                    result.Result = true;
+                    result.Message = "验证成功";
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
                 // 用户名和密码不为空，则使用用户名和密码登录
                 if (string.IsNullOrEmpty(userCode) || string.IsNullOrEmpty(password))
                 {
@@ -68,6 +82,8 @@ namespace FPLDQ.MvcController
                 if (loginuser.Password == password)//如果用户密码一致 登录成功
                 {
                     UserValidator uservalidator = UserValidatorFactory.GetUserValidatorByUser(loginuser);
+                    
+                    //设置session的值
                     this.Session[Sessions.GetUserValidator()] = uservalidator;
 
                     result.Result = true;

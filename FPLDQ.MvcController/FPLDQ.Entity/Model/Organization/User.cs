@@ -173,8 +173,11 @@ namespace FPLDQ.Entity.Organization
         public string JPushID { get; set; }
         public string MobileToken { get; set; }
         public int NotifyType { get; set; }
+        /// <summary>
+        /// 默认语言
+        /// </summary>
         public string DefaultLanguage { get; set; }
-        public string Name { get; set; }
+        
         public string Description { get; set; }
         public string CostCenter { get; set; }
         public string ParentID { get; set; }

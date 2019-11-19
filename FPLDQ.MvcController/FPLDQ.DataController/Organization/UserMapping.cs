@@ -30,26 +30,21 @@ namespace FPLDQ.DataController
         /// </summary>
         /// <param name="dr"></param>
         /// <returns></returns>
-        public User drMappUser(DataRow dr)
+        public User MappUser(IDataReader reader)
         {
-            User u = new User();
-            try
+            if (null == reader)
             {
-                u.ObjectID = dr["Objectid"] + string.Empty;
-                u.Code = dr["Code"] + string.Empty;
-                u.Name = dr["Name"] + string.Empty;
-                u.QQ = dr["QQ"] + string.Empty;
-                u.Email = dr["Email"] + string.Empty;
-                u.Password = dr["Password"] + string.Empty;
-
-                return u;
-            }
-            catch (Exception ex)
-            {
-                //TODO:记录当前的错误日志
-                Log.WriteDebugLog("用户登录失败:"+ex.ToString());
+                Log.WriteDebugLog("当前用户不存在");
                 return null;
             }
+            User u = new User();
+            u.ObjectID = (string)reader["ObjectID"];
+            if (reader["Appellation"] != DBNull.Value)
+                u.Appellation = (string)reader["Appellation"];
+            u.BankAccount = (string)reader["Appellation"];
+            //u.BankCity = (DateTime)reader["AddedDate"];
+            
+            return u;
         }
 
     }

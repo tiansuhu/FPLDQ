@@ -31,7 +31,7 @@ namespace FPLDQ.DataController
             }
             catch (Exception ex)
             {
-
+                Log.WriteDebugLog("用户数据库操作连接失败" + ex.ToString());
             }
         }
 
@@ -42,7 +42,16 @@ namespace FPLDQ.DataController
         /// <returns></returns>
         public override bool AddUser(User user)
         {
-            //TODO：实现添加用户
+            try
+            {
+                //TODO：实现添加用户
+            }
+            catch (Exception ex)
+            {
+                Log.WriteDebugLog("添加用户失败:" + ex.ToString());
+            }
+
+           
             return true;
         }
 
@@ -85,14 +94,16 @@ namespace FPLDQ.DataController
             string sql = "SELECT Objectid,Code,Name,QQ,Email,Password FROM SYS_User  WHERE Code = @userCode";
             System.Data.Common.DbCommand dbCommand = database.GetSqlStringCommand(sql);
             database.AddInParameter(dbCommand, "@userCode", DbType.String, UserCode);
-            DataSet dts =  database.ExecuteDataSet(dbCommand);
+
             User currentuser = null;
-            if (dts.Tables.Count > 0)
+            using (IDataReader reder = database.ExecuteReader(sql))
             {
-                DataTable dt = dts.Tables[0];
-                if (dt.Rows.Count > 0)
-                    currentuser = UserMapping.CreateUserMapping().drMappUser(dt.Rows[0]);
+                if (reder.Read())
+                {
+                    currentuser = UserMapping.CreateUserMapping().MappUser(reder);
+                }
             }
+
             return currentuser;
 
         }
